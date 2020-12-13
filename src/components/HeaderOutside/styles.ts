@@ -10,17 +10,20 @@ export const Container = styled.nav`
 `;
 
 export const ContainerLogo = styled.section`
-  display: flex;
-  align-items: center;
-  margin-left: -25px;
+  a {
+    display: flex;
+    align-items: center;
+    margin-left: -25px;
+    text-decoration: none;
+  }
 
-  h1 {
+  a h1 {
     color: var(--light);
     margin-left: -30px;
   }
 
   @media (max-width: 500px) {
-    & h1 {
+    & a h1 {
       display: none;
     }
   }
@@ -36,6 +39,11 @@ export const ContainerMenu = styled.section`
     align-items: center;
     cursor: pointer;
     transition: opacity 0.6s;
+  }
+
+  .purple a,
+  .purple svg {
+    color: var(--primary);
   }
 
   article a {
