@@ -1,11 +1,9 @@
-/* eslint-disable camelcase */
 import React, { useState, useEffect } from 'react';
 import api, { environment } from '../../services/api';
 import { Container } from './styles';
 
 interface UserProps {
   name: string;
-  // eslint-disable-next-line camelcase
   photo_id: string;
 }
 

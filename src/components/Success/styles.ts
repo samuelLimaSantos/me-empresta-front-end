@@ -28,4 +28,14 @@ export const Content = styled.div`
     color: var(--light);
     margin-bottom: 32px;
   }
+
+  @media (max-width: 550px) {
+    img:first-child {
+      width: 300px;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+  }
 `;
