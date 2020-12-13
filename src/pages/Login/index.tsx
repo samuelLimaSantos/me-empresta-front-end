@@ -8,10 +8,12 @@ import Logo from '../../assets/Logo.png';
 import { Form, Container, Content, ImageContainer } from './styles';
 import { Context } from '../../context';
 import api from '../../services/api';
+import Loading from '../../components/Loading';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const { login } = useContext(Context);
 
   const history = useHistory();
@@ -21,10 +23,12 @@ const Login: React.FC = () => {
       event.preventDefault();
 
       try {
+        setIsLoading(true);
         const { data } = await api.post('/session', {
           email,
           password,
         });
+        setIsLoading(false);
 
         const { token, userId } = data;
 
@@ -39,6 +43,7 @@ const Login: React.FC = () => {
 
   return (
     <Container>
+      {isLoading && <Loading />}
       <HeaderOutside />
       <Content>
         <ImageContainer>

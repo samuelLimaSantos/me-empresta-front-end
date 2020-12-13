@@ -12,6 +12,7 @@ import Logo from '../../assets/Logo.png';
 import { Container, Content, ImageContainer, Form } from './styles';
 import Success from '../../components/Success';
 import ErrorScreen from '../../components/ErrorScreen';
+import Loading from '../../components/Loading';
 
 const Register: React.FC = () => {
   const [selectedFile, setSelectedFile] = useState<File>();
@@ -22,6 +23,7 @@ const Register: React.FC = () => {
   const [password, setPassword] = useState('');
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
+  const [isLoading, setLoading] = useState(false);
 
   const history = useHistory();
 
@@ -44,7 +46,9 @@ const Register: React.FC = () => {
       }
 
       try {
+        setLoading(true);
         await api.post('/user', data);
+        setLoading(false);
         setSuccess(true);
 
         setTimeout(() => {
@@ -67,6 +71,7 @@ const Register: React.FC = () => {
   return (
     <Container>
       <Header menuPurple />
+      {isLoading && <Loading />}
       <Content>
         {success && <Success text="Cadastro feito com sucesso!" />}
         {error && <ErrorScreen text="Ocorreu algum erro." />}
