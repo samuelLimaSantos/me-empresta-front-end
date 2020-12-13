@@ -1,7 +1,7 @@
 import React, { useState, useCallback, FormEvent, useContext } from 'react';
 import { FiMail } from 'react-icons/fi';
 import { RiLockPasswordLine } from 'react-icons/ri';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import HeaderOutside from '../../components/HeaderOutside';
 import LoginImage from '../../assets/login.svg';
 import Logo from '../../assets/Logo.png';
@@ -14,6 +14,8 @@ const Login: React.FC = () => {
   const [password, setPassword] = useState('');
   const { login } = useContext(Context);
 
+  const history = useHistory();
+
   const handleLogin = useCallback(
     async (event: FormEvent) => {
       event.preventDefault();
@@ -24,14 +26,15 @@ const Login: React.FC = () => {
           password,
         });
 
-        const { token } = data;
+        const { token, userId } = data;
 
-        login(token);
+        login(token, userId);
+        history.push('/home');
       } catch (error) {
         alert(error.response.data.message);
       }
     },
-    [email, password, login],
+    [email, password, login, history],
   );
 
   return (
