@@ -2,6 +2,7 @@ import React, { createContext, useState, useEffect, useCallback } from 'react';
 
 const Context = createContext({
   authenticated: false,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   login(token: string) {},
   token: '',
   handleLogout() {},
