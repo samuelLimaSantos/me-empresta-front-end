@@ -1,6 +1,6 @@
 import React, { useState, useCallback, FormEvent } from 'react';
 import { FiUser, FiCreditCard, FiMail } from 'react-icons/fi';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { RiLockPasswordLine } from 'react-icons/ri';
 import { AiOutlineWhatsApp } from 'react-icons/ai';
 import InputMask from 'react-input-mask';
@@ -49,7 +49,7 @@ const Register: React.FC = () => {
 
         setTimeout(() => {
           setSuccess(false);
-          history.push('/');
+          history.push('/login');
         }, 2000);
       } catch (err) {
         if (err.response.status === 400) {
@@ -160,7 +160,7 @@ const Register: React.FC = () => {
 
             <button type="submit">Cadastrar-se</button>
 
-            <a href="/">Já tem cadastro? Faça login.</a>
+            <Link to="/login">Já tem cadastro? Faça login.</Link>
           </fieldset>
         </Form>
       </Content>
