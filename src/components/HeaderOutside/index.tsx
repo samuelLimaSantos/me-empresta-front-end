@@ -8,7 +8,7 @@ interface HeaderProps {
   menuPurple?: boolean;
 }
 
-const HeaderOutside = ({ menuPurple }: HeaderProps) => {
+const HeaderOutside: React.FC<HeaderProps> = ({ menuPurple }: HeaderProps) => {
   return (
     <Container>
       <ContainerLogo>

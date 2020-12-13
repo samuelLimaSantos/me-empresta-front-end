@@ -36,8 +36,6 @@ const Register: React.FC = () => {
         return;
       }
 
-      console.log(data);
-
       await api.post('/user', data);
     },
     [name, cpf, whatsapp, email, password, selectedFile],
