@@ -17,8 +17,6 @@ const Home: React.FC = () => {
     api.get(`/user/${id}`).then(response => {
       setData(response.data);
     });
-
-    console.log(data);
   }, []);
 
   return (
