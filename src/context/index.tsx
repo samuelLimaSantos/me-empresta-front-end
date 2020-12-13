@@ -3,7 +3,7 @@ import React, { createContext, useState, useEffect, useCallback } from 'react';
 const Context = createContext({
   authenticated: false,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  login(token: string, userId: number) {},
+  login(token: string, userId: string) {},
   token: '',
   handleLogout() {},
 });
@@ -20,11 +20,11 @@ const AuthProvider: React.FC = ({ children }) => {
     }
   }, []);
 
-  const login = useCallback((token: string, userId: number) => {
+  const login = useCallback((token: string, userId: string) => {
     setToken(token);
 
-    localStorage.setItem('token', JSON.stringify(token));
-    localStorage.setItem('userId', JSON.stringify(userId));
+    localStorage.setItem('token', token);
+    localStorage.setItem('userId', userId);
 
     setAuthenticated(true);
   }, []);

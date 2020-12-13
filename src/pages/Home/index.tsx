@@ -12,9 +12,18 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     const id = localStorage.getItem('userId');
-    api.get(`/user/${id}`).then(response => {
-      setData(response.data);
-    });
+    const token = localStorage.getItem('token');
+    const Authorization = `Bearer ${token}`;
+
+    api
+      .get(`/user/${id}`, {
+        headers: {
+          Authorization,
+        },
+      })
+      .then(response => {
+        setData(response.data);
+      });
   }, []);
 
   return (
