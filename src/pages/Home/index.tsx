@@ -21,7 +21,7 @@ const Home: React.FC = () => {
 
   return (
     <Container>
-      <h1>Seja bem vindo {data.name}</h1>
+      <h1>Seja bem vindo seu puto {data.name}</h1>
       <img src={`${environment}/uploads/${data.photo_id}`} alt="" />
     </Container>
   );
