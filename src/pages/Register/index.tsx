@@ -1,5 +1,6 @@
 import React, { useState, useCallback, FormEvent } from 'react';
 import { FiUser, FiCreditCard, FiMail } from 'react-icons/fi';
+import { useHistory } from 'react-router-dom';
 import { RiLockPasswordLine } from 'react-icons/ri';
 import { AiOutlineWhatsApp } from 'react-icons/ai';
 import InputMask from 'react-input-mask';
@@ -7,7 +8,10 @@ import Header from '../../components/HeaderOutside';
 import RegisterImage from '../../assets/register.svg';
 import Dropzone from '../../components/Dropzone';
 import api from '../../services/api';
+import Logo from '../../assets/Logo.png';
 import { Container, Content, ImageContainer, Form } from './styles';
+import Success from '../../components/Success';
+import ErrorScreen from '../../components/ErrorScreen';
 
 const Register: React.FC = () => {
   const [selectedFile, setSelectedFile] = useState<File>();
@@ -16,6 +20,10 @@ const Register: React.FC = () => {
   const [whatsapp, setWhatsapp] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
+
+  const history = useHistory();
 
   const handleSubmitData = useCallback(
     async (event: FormEvent) => {
@@ -35,20 +43,41 @@ const Register: React.FC = () => {
         return;
       }
 
-      await api.post('/user', data);
+      try {
+        await api.post('/user', data);
+        setSuccess(true);
+
+        setTimeout(() => {
+          setSuccess(false);
+          history.push('/');
+        }, 2000);
+      } catch (err) {
+        if (err.response.status === 400) {
+          setError(true);
+          setTimeout(() => {
+            setError(false);
+            history.push('/register');
+          }, 3000);
+        }
+      }
     },
-    [name, cpf, whatsapp, email, password, selectedFile],
+    [name, cpf, whatsapp, email, password, selectedFile, history],
   );
 
   return (
     <Container>
       <Header menuPurple />
       <Content>
+        {success && <Success text="Cadastro feito com sucesso!" />}
+        {error && <ErrorScreen text="Ocorreu algum erro." />}
         <ImageContainer>
           <img src={RegisterImage} alt="Imagem de registro" />
         </ImageContainer>
 
         <Form onSubmit={handleSubmitData}>
+          <div className="logo-mobile">
+            <img src={Logo} alt="logo-mobile" />
+          </div>
           <fieldset>
             <legend>Registrar-se</legend>
             <div className="container-dropzone">
@@ -129,7 +158,7 @@ const Register: React.FC = () => {
               <a href="/">Termos de compromisso</a>
             </div>
 
-            <button type="submit">Cadastra-se</button>
+            <button type="submit">Cadastrar-se</button>
 
             <a href="/">Já tem cadastro? Faça login.</a>
           </fieldset>

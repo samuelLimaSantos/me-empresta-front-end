@@ -34,6 +34,18 @@ export const Form = styled.form`
   border-radius: 32px 0 0 32px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.45);
 
+  .logo-mobile {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32px;
+    display: none;
+  }
+
+  .logo-mobile img {
+    width: 190px;
+  }
+
   fieldset {
     border: none;
     max-width: 640px;
@@ -125,6 +137,14 @@ export const Form = styled.form`
   @media (max-width: 900px) {
     & {
       border-radius: 0;
+    }
+
+    .logo-mobile {
+      display: flex;
+    }
+
+    section .input svg {
+      margin-right: 5px;
     }
   }
 `;
