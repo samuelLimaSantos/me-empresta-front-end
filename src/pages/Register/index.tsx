@@ -32,7 +32,6 @@ const Register: React.FC = () => {
       if (selectedFile) {
         data.append('photo', selectedFile);
       } else {
-        alert('Imagem é obrigatória');
         return;
       }
 
