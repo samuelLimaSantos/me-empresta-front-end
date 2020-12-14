@@ -166,7 +166,7 @@ const Register: React.FC = () => {
 
             <button type="submit">Cadastrar-se</button>
 
-            <Link to="/login">Não tem cadastro? Crie sua conta.</Link>
+            <Link to="/login">Já tem cadastro? Faça login.</Link>
           </fieldset>
         </Form>
       </Content>

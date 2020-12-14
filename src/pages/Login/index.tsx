@@ -36,7 +36,6 @@ const Login: React.FC = () => {
         history.push('/home');
       } catch (error) {
         setIsLoading(false);
-
         alert(error.response.data.message);
       }
     },
@@ -86,7 +85,7 @@ const Login: React.FC = () => {
               </div>
             </section>
             <button type="submit">Entrar</button>
-            <Link to="/register">Já tem cadastro? Faça login.</Link>
+            <Link to="/register">Não tem cadastro? Crie sua conta.</Link>
           </fieldset>
         </Form>
       </Content>
