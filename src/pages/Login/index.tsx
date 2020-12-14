@@ -35,6 +35,8 @@ const Login: React.FC = () => {
         login(token, userId);
         history.push('/home');
       } catch (error) {
+        setIsLoading(false);
+
         alert(error.response.data.message);
       }
     },

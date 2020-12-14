@@ -58,6 +58,7 @@ const Register: React.FC = () => {
       } catch (err) {
         if (err.response.status === 400) {
           setError(true);
+          setLoading(false);
           setTimeout(() => {
             setError(false);
             history.push('/register');
