@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   position: fixed;
-  z-index: 9999;
+  z-index: 9999999999;
   background-color: rgba(0, 0, 0, 0.966);
   top: 0;
   left: 0;

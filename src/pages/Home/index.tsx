@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Loading from '../../components/Loading';
 import api, { environment } from '../../services/api';
+import HeaderInside from '../../components/HeaderInside';
 import { Container } from './styles';
 
 interface UserProps {
@@ -28,6 +29,8 @@ const Home: React.FC = () => {
         setData(response.data);
         setIsLoading(false);
       });
+
+    setIsLoading(false);
   }, []);
 
   if (isLoading) {
@@ -36,8 +39,10 @@ const Home: React.FC = () => {
 
   return (
     <Container>
-      <h1>Seja bem vindo seu puto {data.name}</h1>
-      <img src={`${environment}/uploads/${data.photo_id}`} alt="" />
+      <HeaderInside
+        imagePath={`${environment}/uploads/${data.photo_id}`}
+        name={data.name}
+      />
     </Container>
   );
 };

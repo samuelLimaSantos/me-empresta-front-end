@@ -27,7 +27,7 @@ const Landing: React.FC = () => {
             <span>compra</span>. Conhça nossa plataforma,{' '}
             <span>escolha seus produtos</span>, e <span>alugue-os</span>.
           </p>
-          <ButtonContainer href="/">
+          <ButtonContainer to="/home">
             <div>Conheça</div>
             <FiArrowRight />
           </ButtonContainer>

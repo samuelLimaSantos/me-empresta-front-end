@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   max-width: 1300px;
@@ -30,7 +31,7 @@ export const Description = styled.section`
 
   h1 {
     width: 50px;
-    font-size: 56px;
+    font-size: 50px;
     color: var(--light);
     margin-bottom: 16px;
   }
@@ -39,7 +40,7 @@ export const Description = styled.section`
     display: block;
     color: var(--dark);
     background-color: var(--secondary-details);
-    width: 274px;
+    width: 245px;
   }
 
   p {
@@ -82,7 +83,7 @@ export const Description = styled.section`
   }
 `;
 
-export const ButtonContainer = styled.a`
+export const ButtonContainer = styled(Link)`
   margin-top: 32px;
   width: 280px;
   height: 50px;

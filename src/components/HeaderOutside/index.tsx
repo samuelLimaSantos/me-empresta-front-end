@@ -19,7 +19,7 @@ const HeaderOutside: React.FC<HeaderProps> = ({ menuPurple }: HeaderProps) => {
       </ContainerLogo>
       <ContainerMenu>
         <article className={menuPurple ? 'purple' : 'white'}>
-          <Link to="/register">Sobre nós</Link>
+          <Link to="/">Sobre nós</Link>
           <FiUsers />
         </article>
 

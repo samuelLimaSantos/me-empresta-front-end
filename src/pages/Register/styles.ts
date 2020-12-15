@@ -33,6 +33,7 @@ export const Form = styled.form`
   margin-top: -90px;
   border-radius: 32px 0 0 32px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.45);
+  z-index: 9999999;
 
   .logo-mobile {
     margin: 0 auto;
