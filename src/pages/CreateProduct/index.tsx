@@ -61,8 +61,6 @@ const CreateProduct: React.FC = () => {
         return;
       }
 
-      console.log(newPrice);
-
       try {
         const Authorization = `Bearer ${token}`;
         setLoading(true);
