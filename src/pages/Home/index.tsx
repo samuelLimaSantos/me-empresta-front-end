@@ -53,7 +53,7 @@ const Home: React.FC = () => {
                 <h1>{product.title}</h1>
                 <p>{product.description}</p>
                 <h1>
-                  R${product.price} por {product.quantity_days} dias
+                  R${product.price} por {product.quantity_days} dias.
                 </h1>
                 <a href="/">Saber mais</a>
               </div>
