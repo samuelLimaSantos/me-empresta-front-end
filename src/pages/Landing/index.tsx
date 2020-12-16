@@ -22,9 +22,9 @@ const Landing: React.FC = () => {
           </h1>
           <p>
             A sua plataforma para
-            <span>aluguel</span> inteiramente <span>gratuíta</span>. Aqui você
-            encontra diversos produtos para <span>aluguel</span> ou{' '}
-            <span>compra</span>. Conhça nossa plataforma,{' '}
+            <span> aluguel</span> inteiramente <span>gratuíta</span>. Aqui você
+            encontra diversos produtos para <span>emprestar</span> ou{' '}
+            <span>pegar emprestado</span>. Conheça nossa plataforma,{' '}
             <span>escolha seus produtos</span>, e <span>alugue-os</span>.
           </p>
           <ButtonContainer to="/home">

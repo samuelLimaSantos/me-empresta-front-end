@@ -87,7 +87,7 @@ const Register: React.FC = () => {
           <fieldset>
             <legend>Registrar-se</legend>
             <div className="container-dropzone">
-              <Dropzone onFileUploaded={setSelectedFile} />
+              <Dropzone onFileUploaded={setSelectedFile} name="perfil" />
             </div>
 
             <section>

@@ -5,10 +5,12 @@ import './styles.css';
 
 interface DropzoneProps {
   onFileUploaded: (file: File) => void;
+  name: string;
 }
 
 const Dropzone: React.FC<DropzoneProps> = ({
   onFileUploaded,
+  name,
 }: DropzoneProps) => {
   const [selectedFileUrl, setSelectedFileUrl] = useState('');
 
@@ -37,7 +39,7 @@ const Dropzone: React.FC<DropzoneProps> = ({
       ) : (
         <p>
           <FiCamera />
-          Foto do perfil
+          Foto do {name}
         </p>
       )}
     </div>

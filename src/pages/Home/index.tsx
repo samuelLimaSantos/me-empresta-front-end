@@ -2,33 +2,29 @@ import React, { useState, useEffect } from 'react';
 import Loading from '../../components/Loading';
 import api, { environment } from '../../services/api';
 import HeaderInside from '../../components/HeaderInside';
-import { Container } from './styles';
+import BannerImage from '../../assets/Banner.svg';
+import { Container, Content, Products, Product } from './styles';
 
-interface UserProps {
-  name: string;
+interface ProductProps {
+  id: string;
   photo_id: string;
+  title: string;
+  description: string;
+  price: string;
+  quantity_days: number;
 }
 
 const Home: React.FC = () => {
-  const [data, setData] = useState({} as UserProps);
+  const [products, setProducts] = useState<ProductProps[]>();
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const id = localStorage.getItem('userId');
-    const token = localStorage.getItem('token');
-    const Authorization = `Bearer ${token}`;
-
     setIsLoading(true);
-    api
-      .get(`/user/${id}`, {
-        headers: {
-          Authorization,
-        },
-      })
-      .then(response => {
-        setData(response.data);
-        setIsLoading(false);
-      });
+
+    api.get(`/product`).then(response => {
+      setProducts(response.data);
+      setIsLoading(false);
+    });
 
     setIsLoading(false);
   }, []);
@@ -39,10 +35,32 @@ const Home: React.FC = () => {
 
   return (
     <Container>
-      <HeaderInside
-        imagePath={`${environment}/uploads/${data.photo_id}`}
-        name={data.name}
-      />
+      <HeaderInside />
+      <Content>
+        <div className="banner">
+          <img src={BannerImage} alt="Banner da Black Friday" />
+        </div>
+
+        <Products>
+          {products?.map(product => (
+            <Product key={product.id}>
+              <img
+                src={`${environment}/uploads/${product.photo_id}`}
+                alt="Foto do produto"
+              />
+
+              <div className="description">
+                <h1>{product.title}</h1>
+                <p>{product.description}</p>
+                <h1>
+                  R${product.price} por {product.quantity_days} dias
+                </h1>
+                <a href="/">Saber mais</a>
+              </div>
+            </Product>
+          ))}
+        </Products>
+      </Content>
     </Container>
   );
 };

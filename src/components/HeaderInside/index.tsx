@@ -1,19 +1,43 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FiSearch } from 'react-icons/fi';
+import { FiSearch, FiPlusSquare } from 'react-icons/fi';
 import Logo from '../../assets/Logo.png';
-import { Container, Content, LinkContainer } from './styles';
+import { Container, Content, LinkContainer, Menu, MenuContent } from './styles';
 import UserImage from '../../assets/user.png';
+import Loading from '../Loading';
+import api, { environment } from '../../services/api';
 
-interface HeaderInsideProps {
-  imagePath?: string;
-  name?: string;
+interface UserProps {
+  name: string;
+  photo_id: string;
 }
 
-const HeaderInside: React.FC<HeaderInsideProps> = ({
-  imagePath,
-  name,
-}: HeaderInsideProps) => {
+const HeaderInside: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [userData, setUserData] = useState({} as UserProps);
+
+  useEffect(() => {
+    const id = localStorage.getItem('userId');
+    const token = localStorage.getItem('token');
+    const Authorization = `Bearer ${token}`;
+    setIsLoading(true);
+    api
+      .get(`/user/${id}`, {
+        headers: {
+          Authorization,
+        },
+      })
+      .then(response => {
+        setUserData(response.data);
+        setIsLoading(false);
+      });
+    setIsLoading(false);
+  }, []);
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
     <Container>
       <Content>
@@ -21,25 +45,44 @@ const HeaderInside: React.FC<HeaderInsideProps> = ({
           <img src={Logo} alt="Logo do me empresta" />
         </Link>
 
-        <section>
+        <section className="input-search">
           <input type="text" placeholder="Pesquise algo.." />
           <FiSearch />
         </section>
 
-        {name ? (
-          <section>
-            <span>Bem-vindo {name}</span>
-            <img src={imagePath} alt="Imagem do usuário" />
+        {userData.name ? (
+          <section className="box-perfil">
+            <span>Bem-vindo {userData.name}</span>
+            <img
+              src={`${environment}/uploads/${userData.photo_id}`}
+              alt="Imagem do usuário"
+            />
           </section>
         ) : (
           <LinkContainer to="login">
-            <section>
+            <section className="box-perfil">
               <span>Faça o login</span>
               <img src={UserImage} alt="Imagem do usuário" />
             </section>
           </LinkContainer>
         )}
       </Content>
+      <Menu>
+        <MenuContent>
+          <div />
+          <ul>
+            <li>Black Friday</li>
+            <li>Bombando</li>
+            <li>Categorias</li>
+            <li>Sobre</li>
+          </ul>
+
+          <Link to="/new-product" className="anunciar">
+            <span>Emprestar</span>
+            <FiPlusSquare width="3" size="28px" />
+          </Link>
+        </MenuContent>
+      </Menu>
     </Container>
   );
 };
