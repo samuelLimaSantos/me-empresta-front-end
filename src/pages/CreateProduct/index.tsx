@@ -1,7 +1,6 @@
 import React, { useState, useCallback, FormEvent } from 'react';
 import InputMask from 'react-input-mask';
 import { useHistory } from 'react-router-dom';
-import CurrencyInput from 'react-currency-input-field';
 import AsideImage from '../../assets/asideImage.svg';
 import Dropzone from '../../components/Dropzone';
 import HeaderInside from '../../components/HeaderInside';
