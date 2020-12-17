@@ -43,7 +43,7 @@ const Product: React.FC = () => {
       setSuccess(false);
       history.push('/home');
     }, 2000);
-  }, []);
+  }, [history]);
 
   return (
     <Container>
