@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { BsStarHalf, BsStarFill } from 'react-icons/bs';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import api from '../../services/api';
 import HeaderInside from '../../components/HeaderInside';
 import Loading from '../../components/Loading';
 import { Container, Content } from './styles';
+import Success from '../../components/Success';
 
 interface ProductProps {
   id: string;
@@ -23,6 +24,9 @@ const Product: React.FC = () => {
   const { id } = useParams() as { id: string };
   const [product, setProduct] = useState<ProductProps>({} as ProductProps);
   const [isLoading, setIsLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  const history = useHistory();
 
   useEffect(() => {
     setIsLoading(true);
@@ -33,9 +37,18 @@ const Product: React.FC = () => {
     setIsLoading(false);
   }, [id]);
 
+  const handleBoughtProduct = useCallback(() => {
+    setSuccess(true);
+    setTimeout(() => {
+      setSuccess(false);
+      history.push('/home');
+    }, 2000);
+  }, []);
+
   return (
     <Container>
       {isLoading && <Loading />}
+      {success && <Success text="Você pegou emprestado" />}
       <HeaderInside />
       <Content>
         <img
@@ -89,7 +102,11 @@ const Product: React.FC = () => {
             </div>
           </div>
           <div className="button">
-            <button type="button" className="emprest">
+            <button
+              type="button"
+              className="emprest"
+              onClick={handleBoughtProduct}
+            >
               Pegar emprestado
             </button>
           </div>

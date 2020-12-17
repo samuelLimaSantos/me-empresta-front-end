@@ -78,15 +78,11 @@ const CreateProduct: React.FC = () => {
         }, 2000);
       } catch (err) {
         setLoading(false);
-
-        if (err.response.status === 400) {
-          setError(true);
-          setLoading(false);
-          setTimeout(() => {
-            setError(false);
-            history.push('/new-product');
-          }, 3000);
-        }
+        setError(true);
+        setTimeout(() => {
+          setError(false);
+          history.push('/new-product');
+        }, 3000);
       }
     },
     [
