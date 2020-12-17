@@ -41,7 +41,7 @@ const HeaderInside: React.FC = () => {
   return (
     <Container>
       <Content>
-        <Link to="/">
+        <Link to="/home">
           <img src={Logo} alt="Logo do me empresta" />
         </Link>
 
