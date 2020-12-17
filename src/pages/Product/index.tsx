@@ -3,8 +3,8 @@ import { BsStarHalf, BsStarFill } from 'react-icons/bs';
 import { useParams } from 'react-router-dom';
 import api from '../../services/api';
 import HeaderInside from '../../components/HeaderInside';
-import { Container } from './styles';
 import Loading from '../../components/Loading';
+import { Container, Content } from './styles';
 
 interface ProductProps {
   id: string;
@@ -17,11 +17,6 @@ interface ProductProps {
   delivery_point: string;
   uf: string;
   city: string;
-  user_id: {
-    name: string;
-    email: string;
-    whatsapp: string;
-  };
 }
 
 const Product: React.FC = () => {
@@ -38,14 +33,11 @@ const Product: React.FC = () => {
     setIsLoading(false);
   }, [id]);
 
-  if (isLoading) {
-    return <Loading />;
-  }
-
   return (
     <Container>
+      {isLoading && <Loading />}
       <HeaderInside />
-      <div className="content">
+      <Content>
         <img
           src={`https://upload-meempresta.s3.amazonaws.com/${product.photo_id}`}
           alt="Foto do produto"
@@ -55,7 +47,6 @@ const Product: React.FC = () => {
           <div className="initial-information">
             <h1>{product.title}</h1>
 
-            <span>Alugado por {product.user_id.name}</span>
             <div className="feedback">
               <div className="stars">
                 <BsStarFill />
@@ -80,7 +71,7 @@ const Product: React.FC = () => {
           </div>
 
           <div className="about-user">
-            <h1>Sobre quem vai emprestar e entrega</h1>
+            <h1>Sobre entrega</h1>
             <div className="information">
               <button type="button">
                 {product.delivery_way === 'presential'
@@ -95,16 +86,15 @@ const Product: React.FC = () => {
                   <p>Estado: {product.uf}</p>
                 </div>
               )}
-
-              <div>
-                <p>Nome: {product.user_id.name}</p>
-                <p>Contato: {product.user_id.whatsapp}</p>
-              </div>
             </div>
           </div>
-          <button type="button">Pegar emprestado</button>
+          <div className="button">
+            <button type="button" className="emprest">
+              Pegar emprestado
+            </button>
+          </div>
         </div>
-      </div>
+      </Content>
     </Container>
   );
 };

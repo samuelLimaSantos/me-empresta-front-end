@@ -17,25 +17,21 @@ interface ProductProps {
 
 const Home: React.FC = () => {
   const [products, setProducts] = useState<ProductProps[]>();
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setIsLoading(true);
 
     api.get(`/product`).then(response => {
       setProducts(response.data);
-      setIsLoading(false);
     });
 
     setIsLoading(false);
   }, []);
 
-  if (isLoading) {
-    return <Loading />;
-  }
-
   return (
     <Container>
+      {isLoading && <Loading />}
       <HeaderInside />
       <Content>
         <div className="banner">
