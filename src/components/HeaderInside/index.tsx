@@ -5,7 +5,7 @@ import Logo from '../../assets/Logo.png';
 import { Container, Content, LinkContainer, Menu, MenuContent } from './styles';
 import UserImage from '../../assets/user.png';
 import Loading from '../Loading';
-import api, { environment } from '../../services/api';
+import api from '../../services/api';
 
 interface UserProps {
   name: string;

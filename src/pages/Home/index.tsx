@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Loading from '../../components/Loading';
-import api, { environment } from '../../services/api';
+import api from '../../services/api';
 import HeaderInside from '../../components/HeaderInside';
 import BannerImage from '../../assets/Banner.svg';
 import { Container, Content, Products, Product } from './styles';
