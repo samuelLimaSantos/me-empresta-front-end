@@ -216,6 +216,7 @@ const CreateProduct: React.FC = () => {
                       type="text"
                       id="UF"
                       required
+                      maxLength={2}
                       value={uf}
                       onChange={({ target }) => setUf(target.value)}
                     />
