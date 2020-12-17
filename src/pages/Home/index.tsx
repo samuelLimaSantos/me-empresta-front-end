@@ -45,15 +45,19 @@ const Home: React.FC = () => {
           {products?.map(product => (
             <Product key={product.id}>
               <img
-                src={`${environment}/uploads/${product.photo_id}`}
+                src={`https://upload-meempresta.s3.amazonaws.com/${product.photo_id}`}
                 alt="Foto do produto"
               />
 
               <div className="description">
                 <h1>{product.title}</h1>
-                <p>{product.description}</p>
+                <p>
+                  {product.description.length > 25
+                    ? `${product.description.substr(0, 25)}...`
+                    : product.description}
+                </p>
                 <h1>
-                  R${product.price} por {product.quantity_days} dias.
+                  R${product.price} por {product.quantity_days} dias
                 </h1>
                 <a href="/">Saber mais</a>
               </div>

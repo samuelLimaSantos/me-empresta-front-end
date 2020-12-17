@@ -5,6 +5,7 @@ import CreateProduct from './pages/CreateProduct';
 import Home from './pages/Home';
 import Landing from './pages/Landing';
 import Login from './pages/Login';
+import Profile from './pages/Profile';
 import Register from './pages/Register';
 
 const Routes: React.FC = () => {
@@ -27,6 +28,7 @@ const Routes: React.FC = () => {
         <Route path="/login" component={Login} />
         <Route path="/home" component={Home} />
         <PrivateRoute path="/new-product" component={CreateProduct} isPrivate />
+        <PrivateRoute path="/profile" component={Profile} isPrivate />
       </Switch>
     </BrowserRouter>
   );

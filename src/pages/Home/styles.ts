@@ -36,7 +36,8 @@ export const Products = styled.div`
 export const Product = styled.div`
   img {
     width: 100%;
-    max-height: 233px;
+    max-height: 195px;
+    object-fit: cover;
   }
 
   .description {
