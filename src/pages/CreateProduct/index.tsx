@@ -162,7 +162,7 @@ const CreateProduct: React.FC = () => {
                 <input
                   type="number"
                   id="quantity"
-                  max={10}
+                  max={50}
                   required
                   value={quantity_days}
                   onChange={({ target }) => {
