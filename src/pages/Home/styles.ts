@@ -36,6 +36,7 @@ export const Products = styled.div`
 export const Product = styled.div`
   img {
     width: 100%;
+    height: 196px;
     max-height: 195px;
     object-fit: cover;
   }
@@ -44,6 +45,7 @@ export const Product = styled.div`
     background-color: var(--light);
     padding: 16px;
     border-radius: 0 0 8px 8px;
+    height: 222px;
     h1 {
       font-size: 24px;
       margin-bottom: 16px;
