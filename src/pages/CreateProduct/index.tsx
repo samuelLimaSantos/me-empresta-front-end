@@ -140,6 +140,7 @@ const CreateProduct: React.FC = () => {
                 id="description"
                 value={description}
                 onChange={({ target }) => setDescription(target.value)}
+                maxLength={500}
                 required
               />
             </section>
