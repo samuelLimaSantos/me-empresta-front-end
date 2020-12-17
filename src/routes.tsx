@@ -3,6 +3,7 @@ import React from 'react';
 import { Switch, BrowserRouter, Route, Redirect } from 'react-router-dom';
 import CreateProduct from './pages/CreateProduct';
 import Home from './pages/Home';
+import Product from './pages/Product';
 import Landing from './pages/Landing';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
@@ -27,6 +28,7 @@ const Routes: React.FC = () => {
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
         <Route path="/home" component={Home} />
+        <Route path="/product/:id" component={Product} />
         <PrivateRoute path="/new-product" component={CreateProduct} isPrivate />
         <PrivateRoute path="/profile" component={Profile} isPrivate />
       </Switch>

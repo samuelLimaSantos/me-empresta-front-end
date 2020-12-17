@@ -33,6 +33,7 @@ const AuthProvider: React.FC = ({ children }) => {
     setAuthenticated(false);
     setToken('');
     localStorage.removeItem('token');
+    localStorage.removeItem('userId');
   }, []);
 
   return (

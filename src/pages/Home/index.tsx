@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Loading from '../../components/Loading';
 import api from '../../services/api';
 import HeaderInside from '../../components/HeaderInside';
@@ -59,7 +60,7 @@ const Home: React.FC = () => {
                 <h1>
                   R${product.price} por {product.quantity_days} dias
                 </h1>
-                <a href="/">Saber mais</a>
+                <Link to={`product/${product.id}`}>Saber mais</Link>
               </div>
             </Product>
           ))}

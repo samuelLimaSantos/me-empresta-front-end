@@ -1,6 +1,7 @@
 import React, { useState, useCallback, FormEvent } from 'react';
 import InputMask from 'react-input-mask';
 import { useHistory } from 'react-router-dom';
+import CurrencyInput from 'react-currency-input-field';
 import AsideImage from '../../assets/asideImage.svg';
 import Dropzone from '../../components/Dropzone';
 import HeaderInside from '../../components/HeaderInside';
@@ -147,7 +148,6 @@ const CreateProduct: React.FC = () => {
             <div className="group">
               <section>
                 <label htmlFor="price">Preço</label>
-
                 <InputMask
                   id="price"
                   mask="R$9999,99"
@@ -163,6 +163,7 @@ const CreateProduct: React.FC = () => {
                 <input
                   type="number"
                   id="quantity"
+                  max={10}
                   required
                   value={quantity_days}
                   onChange={({ target }) => {

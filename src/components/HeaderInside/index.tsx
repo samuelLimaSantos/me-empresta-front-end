@@ -51,15 +51,17 @@ const HeaderInside: React.FC = () => {
         </section>
 
         {userData.name ? (
-          <section className="box-perfil">
-            <span>Bem-vindo {userData.name}</span>
-            <img
-              src={`https://upload-meempresta.s3.amazonaws.com/${userData.photo_id}`}
-              alt="Imagem do usuário"
-            />
-          </section>
+          <LinkContainer to="/profile">
+            <section className="box-perfil">
+              <span>Bem-vindo {userData.name}</span>
+              <img
+                src={`https://upload-meempresta.s3.amazonaws.com/${userData.photo_id}`}
+                alt="Imagem do usuário"
+              />
+            </section>
+          </LinkContainer>
         ) : (
-          <LinkContainer to="login">
+          <LinkContainer to="/login">
             <section className="box-perfil">
               <span>Faça o login</span>
               <img src={UserImage} alt="Imagem do usuário" />
