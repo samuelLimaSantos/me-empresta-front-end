@@ -163,6 +163,10 @@ export const MenuContent = styled.div`
     justify-items: center;
     column-gap: 16px;
     color: var(--light);
+
+    li:hover {
+      opacity: 0.8;
+    }
   }
 
   .anunciar {
@@ -183,6 +187,10 @@ export const MenuContent = styled.div`
     svg {
       color: var(--light);
       stroke-width: 3;
+    }
+
+    &:hover {
+      opacity: 0.8;
     }
   }
 

@@ -25,16 +25,17 @@ const Product: React.FC = () => {
   const [product, setProduct] = useState<ProductProps>({} as ProductProps);
   const [isLoading, setIsLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [price, setPrice] = useState('');
 
   const history = useHistory();
 
   useEffect(() => {
     setIsLoading(true);
     api.get(`product/${id}`).then(response => {
+      setPrice(response.data.price.replace('.', ','));
       setProduct(response.data);
       setIsLoading(false);
     });
-    setIsLoading(false);
   }, [id]);
 
   const handleBoughtProduct = useCallback(() => {
@@ -74,7 +75,7 @@ const Product: React.FC = () => {
 
             <div className="days-and-price">
               <span>
-                {product.quantity_days} dias por <span>R${product.price}</span>
+                {product.quantity_days} dias por <span>R${price}</span>
               </span>
             </div>
           </div>

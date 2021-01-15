@@ -36,7 +36,6 @@ const Profile: React.FC = () => {
         setUserData(response.data);
         setIsLoading(false);
       });
-    setIsLoading(false);
   }, []);
 
   function handleSetLogout() {

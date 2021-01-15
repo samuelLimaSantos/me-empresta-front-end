@@ -57,6 +57,10 @@ export const Content = styled.div`
         color: var(--primary);
         margin-bottom: 12px;
       }
+
+      a:hover {
+        opacity: 0.8;
+      }
     }
     .feedback {
       display: flex;
@@ -81,6 +85,10 @@ export const Content = styled.div`
       a {
         text-decoration: none;
         color: var(--primary);
+      }
+
+      a:hover {
+        opacity: 0.8;
       }
     }
   }

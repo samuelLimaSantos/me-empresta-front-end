@@ -1,5 +1,4 @@
 import React, { useState, useCallback, FormEvent } from 'react';
-import InputMask from 'react-input-mask';
 import { useHistory } from 'react-router-dom';
 import AsideImage from '../../assets/asideImage.svg';
 import Dropzone from '../../components/Dropzone';
@@ -38,16 +37,14 @@ const CreateProduct: React.FC = () => {
         return;
       }
 
-      const priceNumbers = price.replace(/([^\d])+/gim, '');
-
-      const newPrice = `${priceNumbers.substr(0, 4)}.${priceNumbers.substr(4)}`;
+      const priceWithoutR$ = price.substring(2).replace(',', '.');
 
       const data = new FormData();
 
       data.append('user_id', userId);
       data.append('title', title);
       data.append('description', description);
-      data.append('price', newPrice);
+      data.append('price', priceWithoutR$);
       data.append('quantity_days', quantity_days.toString());
       data.append('delivery_way', isPresential ? 'presential' : 'mail');
       data.append('delivery_point', delivery_point);
@@ -99,6 +96,45 @@ const CreateProduct: React.FC = () => {
     ],
   );
 
+  const maskMoney = useCallback((value: string) => {
+    const cleanValue = value.replace(/[^0-9]/g, '');
+
+    if (cleanValue === '') {
+      return '';
+    }
+
+    let int: number = +cleanValue;
+
+    if (int >= Number.MAX_SAFE_INTEGER + 1) {
+      int = +cleanValue.slice(0, cleanValue.length - 1);
+    }
+
+    let ret = (int / 100).toString();
+
+    if (ret.search('.') !== -1) {
+      ret = ret.replace(/[.]/g, ',');
+
+      const split = ret.split(',');
+
+      if (split.length === 1) {
+        split.push('');
+      }
+
+      if (split[1].length === 0) {
+        split[1] += '0';
+      }
+      if (split[1].length === 1) {
+        split[1] += '0';
+      }
+
+      ret = `${split[0]},${split[1]}`;
+    }
+
+    setPrice(`R$${ret}`);
+
+    return '';
+  }, []);
+
   if (isLoading) {
     return <Loading />;
   }
@@ -144,12 +180,13 @@ const CreateProduct: React.FC = () => {
             <div className="group">
               <section>
                 <label htmlFor="price">Preço</label>
-                <InputMask
+                <input
+                  type="text"
                   id="price"
-                  mask="R$9999,99"
                   required
                   value={price}
-                  onChange={({ target }) => setPrice(target.value)}
+                  maxLength={8}
+                  onChange={({ target }) => maskMoney(target.value)}
                 />
               </section>
 

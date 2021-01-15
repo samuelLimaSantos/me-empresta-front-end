@@ -24,9 +24,8 @@ const Home: React.FC = () => {
 
     api.get(`/product`).then(response => {
       setProducts(response.data);
+      setIsLoading(false);
     });
-
-    setIsLoading(false);
   }, []);
 
   return (
@@ -54,7 +53,8 @@ const Home: React.FC = () => {
                     : product.description}
                 </p>
                 <h1>
-                  R${product.price} por {product.quantity_days} dias
+                  R${product.price.replace('.', ',')} por{' '}
+                  {product.quantity_days} dias
                 </h1>
                 <Link to={`product/${product.id}`}>Saber mais</Link>
               </div>

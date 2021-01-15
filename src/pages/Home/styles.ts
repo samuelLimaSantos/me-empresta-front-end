@@ -2,10 +2,14 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   background-color: var(--background);
+  height: max-content;
+  min-height: 1000px;
 `;
 
 export const Content = styled.div`
   margin-bottom: 64px;
+  height: 100%;
+
   .banner img {
     width: 100%;
   }
@@ -34,6 +38,7 @@ export const Products = styled.div`
 `;
 
 export const Product = styled.div`
+  transition: 1s margin;
   img {
     width: 100%;
     height: 196px;
@@ -59,6 +64,14 @@ export const Product = styled.div`
     a {
       text-decoration: none;
       color: var(--primary);
+    }
+  }
+
+  &:hover {
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    img {
+      border-radius: 8px;
     }
   }
 `;

@@ -8,6 +8,7 @@ import Landing from './pages/Landing';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
 import Register from './pages/Register';
+import AboutUs from './pages/AboutUs';
 
 const Routes: React.FC = () => {
   function PrivateRoute({ isPrivate, ...rest }: any) {
@@ -29,6 +30,7 @@ const Routes: React.FC = () => {
         <Route path="/login" component={Login} />
         <Route path="/home" component={Home} />
         <Route path="/product/:id" component={Product} />
+        <Route path="/about-us" component={AboutUs} />
         <PrivateRoute path="/new-product" component={CreateProduct} isPrivate />
         <PrivateRoute path="/profile" component={Profile} isPrivate />
       </Switch>
