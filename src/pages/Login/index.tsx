@@ -51,9 +51,11 @@ const Login: React.FC = () => {
           <img src={LoginImage} alt="Imagem de login" />
         </ImageContainer>
         <Form onSubmit={handleLogin}>
-          <div className="logo-mobile">
-            <img src={Logo} alt="logo-mobile" />
-          </div>
+          <Link to="/">
+            <div className="logo-mobile">
+              <img src={Logo} alt="logo-mobile" />
+            </div>
+          </Link>
           <fieldset>
             <legend>Iniciar sessão</legend>
 

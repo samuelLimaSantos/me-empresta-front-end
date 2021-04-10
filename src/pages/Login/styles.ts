@@ -65,6 +65,7 @@ export const Form = styled.form`
     font-size: 30px;
     color: var(--primary);
     text-align: center;
+    margin-bottom: 20px;
   }
 
   section {
@@ -95,6 +96,7 @@ export const Form = styled.form`
   }
 
   section .input svg {
+    margin-right: 15px;
     color: var(--primary);
   }
 
@@ -149,8 +151,18 @@ export const Form = styled.form`
       display: flex;
     }
 
+    section .input input {
+      width: 70%;
+      border: none;
+      padding: 8px;
+      height: 36px;
+      outline: none;
+      font-weight: 300;
+      border-radius: 8px;
+    }
+
     section .input svg {
-      margin-right: 5px;
+      margin-left: 20%;
     }
   }
 
