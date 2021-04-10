@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.nav`
   max-width: 1300px;
-  width: 100%;
+  width: 95%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
