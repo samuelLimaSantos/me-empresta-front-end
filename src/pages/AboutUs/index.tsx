@@ -18,7 +18,7 @@ const AboutUs: React.FC = () => {
       <HeaderOutside />
       <Content>
         <Team>
-          <h1>Nosso time</h1>
+          <h1>Time de desenvolvimento</h1>
           <div>
             <article>
               <img src={AnaImage} alt="Imagem de Ana" />
