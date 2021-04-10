@@ -17,7 +17,8 @@ const Landing: React.FC = () => {
       <Content>
         <Description>
           <h1>
-            ALUGUE RECEBA
+            ALUGUE
+            <h2>RECEBA</h2>
             <span>REUTILIZE</span>
           </h1>
           <p>
