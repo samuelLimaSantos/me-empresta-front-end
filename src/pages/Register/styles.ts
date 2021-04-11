@@ -91,7 +91,7 @@ export const Form = styled.form`
   }
 
   section .input input {
-    width: 95%;
+    width: 93%;
     border: none;
     padding: 8px;
     height: 36px;
