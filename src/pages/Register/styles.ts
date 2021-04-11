@@ -190,14 +190,13 @@ export const Form = styled.form`
     }
 
     a {
-      margin-right: 20%;
       text-decoration: none;
       color: var(--primary);
       font-weight: 400;
     }
 
     .terms {
-      margin-right: 10%;
+      margin-right: 25%;
       margin-bottom: 5%;
       font-size: 11pt;
       text-align: right;
