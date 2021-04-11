@@ -1,7 +1,7 @@
 .dropzone {
   background: var(--light);
-  width: 220px;
-  height: 220px;
+  width: 8vw;
+  height: 15vh;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -19,8 +19,9 @@
 }
 
 .dropzone p {
-  width: calc(100% - 30px);
-  height: calc(100% - 30px);
+  font-size: 9pt;
+  width: 80%;
+  height: 80%;
   border-radius: 50%;
   border: 1px dashed var(--primary);
 
@@ -36,4 +37,47 @@
   width: 24px;
   height: 24px;
   margin-bottom: 8px;
+}
+
+@media (max-width: 900px) {
+  .dropzone {
+    background: var(--light);
+    width: 30vw;
+    height: 15vh;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 48px;
+    outline: 0;
+    cursor: pointer;
+  }
+  
+  .dropzone img {
+    width: 95%;
+    height: 95%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .dropzone p {
+    font-size: 8pt;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    border: 1px dashed var(--primary);
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+  }
+  
+  .dropzone p svg {
+    color: var(--primary);
+    width: 24px;
+    height: 24px;
+    margin-bottom: 8px;
+  }
 }
