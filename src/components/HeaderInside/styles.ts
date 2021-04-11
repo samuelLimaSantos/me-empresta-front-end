@@ -19,6 +19,17 @@ export const Content = styled.div`
   justify-content: space-between;
   align-items: center;
 
+  .box-perfil {
+    text-align: center;
+    width: 10vw;
+    justify-self: flex-end;
+  }
+
+  .box-perfil span:hover {
+    text-align: center;
+    font-weight: 400;
+  }
+
   section:nth-child(2) {
     width: 400px;
     height: 40px;
@@ -48,33 +59,13 @@ export const Content = styled.div`
   section:nth-child(3) {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    width: 120px;
     cursor: pointer;
-
-    span {
-      font-weight: 400;
-      width: 100px;
-      font-size: 12px;
-      color: var(--light);
-    }
 
     img {
       width: 50px;
       height: 50px;
       border-radius: 50%;
       border: 3px solid var(--light);
-    }
-
-    &:hover {
-      span {
-        font-weight: bold;
-      }
-
-      img {
-        width: 52px;
-        height: 52px;
-      }
     }
   }
 
@@ -94,8 +85,25 @@ export const Content = styled.div`
       }
     }
 
+    img {
+      height: 6vh;
+      width: 18vw;
+    }
+
     .box-perfil {
-      justify-self: flex-end;
+      width: 75vw;
+    }
+
+    .box-perfil span {
+      width: 100%;
+    }
+
+    .box-perfil img {
+      margin-left: 5%;
+      margin-right: 5%;
+      display: block;
+      height: 5vh;
+      width: 12vw;
     }
   }
 `;
@@ -117,22 +125,18 @@ export const LinkContainer = styled(Link)`
       color: var(--light);
     }
 
+    &:hover {
+      span {
+        color: yellow;
+        font-size: 9pt;
+      }
+    }
+
     img {
       width: 50px;
       height: 50px;
       border-radius: 50%;
       border: 3px solid var(--light);
-    }
-
-    &:hover {
-      span {
-        font-weight: bold;
-      }
-
-      img {
-        width: 52px;
-        height: 52px;
-      }
     }
   }
 `;
@@ -151,14 +155,12 @@ export const MenuContent = styled.div`
 
   ul {
     cursor: pointer;
-
     margin-top: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
     list-style: none;
     font-size: 17px;
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-items: center;
     column-gap: 16px;

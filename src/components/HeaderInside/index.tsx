@@ -53,7 +53,7 @@ const HeaderInside: React.FC = () => {
         {userData.name ? (
           <LinkContainer to="/profile">
             <section className="box-perfil">
-              <span>Bem-vindo {userData.name}</span>
+              <span>Bem-vindo, {userData.name}</span>
               <img
                 src={`https://upload-meempresta.s3.amazonaws.com/${userData.photo_id}`}
                 alt="Imagem do usuário"
