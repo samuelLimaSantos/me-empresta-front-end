@@ -38,6 +38,7 @@ export const Team = styled.section`
     img {
       height: 15vh;
       width: 8vw;
+      border-bottom: 2px solid var(--primary);
       border-radius: 16px;
     }
 
@@ -104,7 +105,7 @@ export const Technologies = styled.section`
   h1 {
     margin-top: 64px;
     color: var(--primary);
-    margin-top: 5%;
+    margin-top: 10%;
     margin-bottom: 32px;
   }
 
@@ -112,7 +113,7 @@ export const Technologies = styled.section`
     width: 100%;
     margin-left: 50%;
     margin-right: 10%;
-    margin-bottom: 14%;
+    margin-bottom: 4%;
     display: flex;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
@@ -127,14 +128,20 @@ export const Technologies = styled.section`
   }
 
   @media (max-width: 600px) {
+    h1 {
+      margin-top: 20%;
+      margin-bottom: 32px;
+      color: var(--primary);
+    }
+
     div {
       width: 100%;
       display: flex;
       margin-right: 50%;
+      margin-bottom: 22vh;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
       align-content: center;
-      margin-bottom: 25vh;
 
       img {
         height: 8vh;
