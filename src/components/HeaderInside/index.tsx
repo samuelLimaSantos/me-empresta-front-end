@@ -73,10 +73,10 @@ const HeaderInside: React.FC = () => {
         <MenuContent>
           <div />
           <ul>
-            <li>Black Friday</li>
-            <li>Bombando</li>
             <li>Categorias</li>
-            <li>Sobre</li>
+            <li>Novos</li>
+            <li>Mais alugados</li>
+            <li>Meu carrinho</li>
           </ul>
 
           <Link to="/new-product" className="anunciar">
