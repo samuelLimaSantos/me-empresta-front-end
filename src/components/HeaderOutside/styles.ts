@@ -10,10 +10,11 @@ export const Container = styled.nav`
 `;
 
 export const ContainerLogo = styled.section`
+  width: 30%;
   a {
     display: flex;
     align-items: center;
-    margin-left: -25px;
+    margin-left: -50px;
     text-decoration: none;
   }
 
@@ -22,7 +23,25 @@ export const ContainerLogo = styled.section`
     margin-left: -30px;
   }
 
+  img {
+    height: 8vh;
+    width: 6vw;
+    margin-right: 2%;
+  }
+
   @media (max-width: 500px) {
+    img {
+      height: 8vh;
+      width: 25vw;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      margin-left: -15px;
+      text-decoration: none;
+    }
+
     & a h1 {
       display: none;
     }
