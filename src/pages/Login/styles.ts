@@ -78,6 +78,7 @@ export const Form = styled.form`
     margin-top: 8px;
     background-color: #fff;
     height: 48px;
+    width: 95%;
     display: flex;
     align-items: center;
     border: 2px solid var(--primary);
@@ -138,6 +139,7 @@ export const Form = styled.form`
   }
 
   @media (max-width: 900px) {
+    margin-top: -67px;
     & {
       border-radius: 0;
       flex-direction: column;
