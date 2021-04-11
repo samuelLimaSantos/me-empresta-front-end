@@ -161,7 +161,7 @@ const Register: React.FC = () => {
             </section>
 
             <div className="terms">
-              <a href="/">Termos de compromisso</a>
+              <a href="/">Ler termos de compromisso</a>
             </div>
 
             <button type="submit">Cadastrar-se</button>
