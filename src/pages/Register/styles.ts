@@ -162,14 +162,15 @@ export const Form = styled.form`
 
     section label {
       color: var(--primary);
-      margin-left: 10%;
+      margin-left: 12%;
     }
 
     section .input {
       margin-top: 5px;
-      margin-left: 10%;
+      margin-left: 12%;
       background-color: #fff;
       width: 70vw;
+      padding: 8px;
       height: 48px;
       display: flex;
       align-items: center;
@@ -189,6 +190,7 @@ export const Form = styled.form`
     }
 
     a {
+      margin-right: 20%;
       text-decoration: none;
       color: var(--primary);
       font-weight: 400;
