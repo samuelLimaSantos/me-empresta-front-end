@@ -33,7 +33,7 @@ export const Form = styled.form`
   display: flex;
   align-content: center;
   padding: 110px 16px 32px 16px;
-  margin-top: -90px;
+  margin-top: -80px;
   border-radius: 32px 0 0 32px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.45);
   z-index: 9999999;
