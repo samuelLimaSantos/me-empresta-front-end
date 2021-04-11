@@ -71,6 +71,11 @@ const HeaderInside: React.FC = () => {
           </LinkContainer>
         )}
       </Content>
+      <section className="box-localizacao">
+        <img src={MapIcon} alt="Icone-localizacao" />
+        <p>Enviar para Jonisson Gomes da Silva </p>
+        <strong>, Recife - 53610</strong>
+      </section>
       <Menu>
         <MenuContent>
           <section className="box-localizacao">
@@ -80,18 +85,16 @@ const HeaderInside: React.FC = () => {
               <strong>Recife - 53610</strong>
             </section>
           </section>
-
           <nav>
-            <p>Black Friday</p>
+            <p>Novos</p>
             <p>Bombando</p>
             <p>Categorias</p>
             <p>Ajuda</p>
-            <p>Sobre</p>
           </nav>
 
           <Link to="/new-product" className="anunciar">
             <span>Emprestar</span>
-            <FiPlusSquare width="3" size="2vh" />
+            <FiPlusSquare width="3" size="32px" />
           </Link>
 
           <Link to="/new-product" className="carrinho">

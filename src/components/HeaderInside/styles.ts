@@ -3,11 +3,38 @@ import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   display: grid;
-  grid-template-rows: 100px 50px;
+  grid-template-rows: 100px 55px;
   background-color: #8651b5;
 
+  .box-localizacao {
+    display: none;
+  }
+
   @media (max-width: 837px) {
-    grid-template-rows: 170px 60px;
+    grid-template-rows: 100px 30px;
+    .box-localizacao {
+      display: flex;
+      margin-bottom: 2%;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+    }
+
+    .box-localizacao img {
+      height: 3vh;
+      width: 3vw;
+      margin-right: 1%;
+    }
+
+    .box-localizacao p {
+      font-size: 8pt;
+      color: white;
+    }
+
+    .box-localizacao strong {
+      font-size: 8pt;
+      color: white;
+    }
   }
 `;
 
@@ -143,6 +170,8 @@ export const LinkContainer = styled(Link)`
 
 export const Menu = styled.nav`
   background-color: var(--primary);
+  @media (max-width: 900px) {
+  }
 `;
 
 export const MenuContent = styled.div`
@@ -153,6 +182,7 @@ export const MenuContent = styled.div`
   align-items: center;
 
   .box-localizacao {
+    display: block;
     display: flex;
     align-items: center;
     width: 17vw;
@@ -237,8 +267,80 @@ export const MenuContent = styled.div`
     height: 2vh;
   }
 
-  @media (max-width: 837px) {
-    height: 60px;
+  @media (max-width: 900px) {
+    display: flex;
+    margin: 0 auto;
+    height: 50px;
+    align-items: center;
+
+    .box-localizacao {
+      display: none;
+    }
+
+    nav {
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    nav p {
+      font-size: 8pt;
+      color: white;
+      margin-left: 4%;
+      margin-right: 4%;
+      transition: 200ms;
+    }
+
+    nav p:hover {
+      cursor: pointer;
+      color: yellow;
+      transition: 200ms;
+    }
+
+    .anunciar {
+      text-decoration: none;
+      margin-right: 8%;
+      margin-left: 0;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      span {
+        font-size: 1.5vh;
+        margin-right: 8px;
+        font-weight: 500;
+        color: var(--light);
+      }
+
+      svg {
+        color: var(--light);
+        stroke-width: 3;
+      }
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    .carrinho {
+      display: flex;
+      text-decoration: none;
+      font-size: 1.5vh;
+      color: white;
+      font-weight: 500;
+      margin-right: 4%;
+      margin-left: 4%;
+      transition: 200ms;
+    }
+
+    .carrinho:hover {
+      transition: 200ms;
+      color: yellow;
+    }
+
+    .carrinho img {
+      width: 2.5vw;
+      height: 2.5vh;
+    }
   }
 
   @media (max-width: 640px) {
