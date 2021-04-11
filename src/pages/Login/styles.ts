@@ -74,6 +74,10 @@ export const Form = styled.form`
     max-width: 500px;
   }
 
+  section label {
+    color: var(--primary);
+  }
+
   section .input {
     margin-top: 8px;
     background-color: #fff;
@@ -150,7 +154,18 @@ export const Form = styled.form`
     }
 
     .logo-mobile {
+      margin-top: -20%;
       display: flex;
+    }
+
+    section {
+      margin-bottom: 32px;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    section label {
+      color: var(--primary);
     }
 
     section .input input {
