@@ -4,6 +4,8 @@ import { FiSearch, FiPlusSquare } from 'react-icons/fi';
 import Logo from '../../assets/Logo.png';
 import { Container, Content, LinkContainer, Menu, MenuContent } from './styles';
 import UserImage from '../../assets/user.png';
+import MapIcon from '../../assets/map.svg';
+import CartIcon from '../../assets/cart.svg';
 import Loading from '../Loading';
 import api from '../../services/api';
 
@@ -71,17 +73,30 @@ const HeaderInside: React.FC = () => {
       </Content>
       <Menu>
         <MenuContent>
-          <div />
-          <ul>
-            <li>Categorias</li>
-            <li>Novos</li>
-            <li>Mais alugados</li>
-            <li>Meu carrinho</li>
-          </ul>
+          <section className="box-localizacao">
+            <img src={MapIcon} alt="Icone-localizacao" />
+            <section>
+              <p>Enviar para Jonisson Gomes da Silva</p>
+              <strong>Recife - 53610</strong>
+            </section>
+          </section>
+
+          <nav>
+            <p>Black Friday</p>
+            <p>Bombando</p>
+            <p>Categorias</p>
+            <p>Ajuda</p>
+            <p>Sobre</p>
+          </nav>
 
           <Link to="/new-product" className="anunciar">
             <span>Emprestar</span>
-            <FiPlusSquare width="3" size="28px" />
+            <FiPlusSquare width="3" size="2vh" />
+          </Link>
+
+          <Link to="/new-product" className="carrinho">
+            <span>Carrinho</span>
+            <img src={CartIcon} alt="Icone-carrinho" />
           </Link>
         </MenuContent>
       </Menu>

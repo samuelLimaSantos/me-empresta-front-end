@@ -147,42 +147,63 @@ export const Menu = styled.nav`
 
 export const MenuContent = styled.div`
   max-width: 1300px;
+  display: flex;
   margin: 0 auto;
   height: 50px;
-  display: grid;
-  align-items: flex-start;
-  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
 
-  ul {
-    cursor: pointer;
-    margin-top: 16px;
+  .box-localizacao {
     display: flex;
-    justify-content: center;
     align-items: center;
-    list-style: none;
-    font-size: 17px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    justify-items: center;
-    column-gap: 16px;
-    color: var(--light);
+    width: 17vw;
+  }
 
-    li:hover {
-      opacity: 0.8;
-    }
+  .box-localizacao img {
+    height: 2vh;
+    width: 2vw;
+  }
+
+  .box-localizacao section {
+    color: white;
+    font-size: 10pt;
+    font-weight: 400;
+  }
+
+  nav {
+    margin-left: 1%;
+    margin-right: 1%;
+    display: flex;
+    width: 30vw;
+    align-items: center;
+  }
+
+  nav p {
+    font-size: 14pt;
+    margin-left: 3%;
+    margin-right: 3%;
+    color: white;
+    transition: 200ms;
+  }
+
+  nav p:hover {
+    cursor: pointer;
+    color: yellow;
+    transition: 200ms;
   }
 
   .anunciar {
+    width: 6vw;
     text-decoration: none;
-    align-self: center;
-    justify-self: flex-end;
-    padding-right: 16px;
+    margin-right: 2%;
+    margin-left: 6%;
     display: flex;
     align-items: center;
     cursor: pointer;
 
     span {
+      font-size: 2vh;
       margin-right: 8px;
-      font-weight: 400;
+      font-weight: 500;
       color: var(--light);
     }
 
@@ -190,10 +211,30 @@ export const MenuContent = styled.div`
       color: var(--light);
       stroke-width: 3;
     }
-
     &:hover {
       opacity: 0.8;
     }
+  }
+
+  .carrinho {
+    text-decoration: none;
+    font-size: 14pt;
+    color: white;
+    font-weight: 500;
+    align-items: center;
+    margin-right: 0;
+    margin-left: 2%;
+    transition: 200ms;
+  }
+
+  .carrinho:hover {
+    transition: 200ms;
+    color: yellow;
+  }
+
+  .carrinho img {
+    width: 2vw;
+    height: 2vh;
   }
 
   @media (max-width: 837px) {
