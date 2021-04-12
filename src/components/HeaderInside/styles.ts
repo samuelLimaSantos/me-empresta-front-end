@@ -185,7 +185,8 @@ export const MenuContent = styled.div`
     display: block;
     display: flex;
     align-items: center;
-    width: 17vw;
+    width: 20vw;
+    margin-right: 3%;
   }
 
   .box-localizacao img {
@@ -203,12 +204,12 @@ export const MenuContent = styled.div`
     margin-left: 1%;
     margin-right: 1%;
     display: flex;
-    width: 30vw;
+    width: 25vw;
     align-items: center;
   }
 
   nav p {
-    font-size: 14pt;
+    font-size: 12pt;
     margin-left: 3%;
     margin-right: 3%;
     color: white;
