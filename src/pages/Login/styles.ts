@@ -29,7 +29,7 @@ export const ImageContainer = styled.section`
 
 export const Form = styled.form`
   background-color: var(--background);
-  height: 100vh;
+  height: 110vh;
   display: flex;
   align-content: center;
   padding: 110px 16px 32px 16px;
@@ -185,7 +185,7 @@ export const Form = styled.form`
 
   @media (max-height: 700px) {
     & {
-      height: 680px;
+      height: 105vh;
     }
   }
 `;
