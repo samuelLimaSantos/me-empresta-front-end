@@ -55,7 +55,7 @@ export const Team = styled.section`
     }
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     div {
       grid-template-columns: 1fr 1fr;
     }
@@ -156,6 +156,26 @@ export const Technologies = styled.section`
         width: 10vw;
         border-radius: 1px;
         margin-left: 5%;
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    padding-bottom: 10%;
+    div {
+      width: 100%;
+      display: flex;
+      margin-right: 50%;
+      margin-bottom: 22vh;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      align-content: center;
+
+      img {
+        height: 5vh;
+        width: 10vw;
+        border-radius: 1px;
+        margin-left: 8%;
       }
     }
   }
