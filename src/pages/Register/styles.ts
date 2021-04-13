@@ -68,6 +68,7 @@ export const Form = styled.form`
   }
 
   section {
+    margin-left: 25%;
     margin-bottom: 30px;
     width: 100%;
     max-width: 500px;
@@ -115,7 +116,7 @@ export const Form = styled.form`
   }
 
   .terms {
-    margin-right: 10%;
+    margin-right: 20%;
     margin-bottom: 5%;
     text-align: right;
     width: 100%;
@@ -144,6 +145,7 @@ export const Form = styled.form`
   }
 
   @media (max-width: 900px) {
+    border-radius: 0;
     fieldset .container-dropzone {
       margin-top: -15%;
     }
@@ -156,6 +158,74 @@ export const Form = styled.form`
 
     section {
       margin-bottom: 30px;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    section label {
+      color: var(--primary);
+      margin-left: 12%;
+    }
+
+    section .input {
+      margin-top: 5px;
+      margin-left: 12%;
+      background-color: #fff;
+      width: 70vw;
+      padding: 8px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      border: 2px solid var(--primary);
+      border-radius: 8px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    section .input input {
+      width: 95%;
+      border: none;
+      padding: 8px;
+      height: 36px;
+      outline: none;
+      font-weight: 300;
+      border-radius: 8px;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 400;
+    }
+
+    .terms {
+      margin-right: 25%;
+      margin-bottom: 5%;
+      font-size: 11pt;
+      text-align: right;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    section .input svg {
+      margin-right: 5px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    border-radius: 0;
+    fieldset .container-dropzone {
+      margin-top: -15%;
+    }
+    img {
+      display: none;
+    }
+    legend {
+      display: none;
+    }
+
+    section {
+      margin-bottom: 30px;
+      margin-left: 10px;
       width: 100%;
       max-width: 500px;
     }
