@@ -7,6 +7,10 @@ export const Container = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 600px) {
+    width: 85%;
+  }
 `;
 
 export const ContainerLogo = styled.section`
@@ -29,16 +33,16 @@ export const ContainerLogo = styled.section`
     margin-right: 2%;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     img {
-      height: 8vh;
-      width: 25vw;
+      height: 5vh;
+      width: 15vw;
     }
 
     a {
       display: flex;
       align-items: center;
-      margin-left: -15px;
+      margin-left: 0;
       text-decoration: none;
     }
 
@@ -79,13 +83,13 @@ export const ContainerMenu = styled.section`
     opacity: 0.8;
   }
 
-  @media (max-width: 500px) {
-    & {
-      width: 170px;
-    }
+  @media (max-width: 600px) {
+    display: flex;
+    width: 40%;
 
     article a {
-      font-size: 14px;
+      margin-right: 0;
+      font-size: 8pt;
     }
   }
 `;
