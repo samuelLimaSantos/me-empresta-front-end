@@ -58,6 +58,31 @@ export const Team = styled.section`
   @media (max-width: 900px) {
     div {
       grid-template-columns: 1fr 1fr;
+
+      article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      img {
+        height: 10vh;
+        width: 14vw;
+        border-bottom: 2px solid var(--primary);
+        border-radius: 16px;
+      }
+
+      h3 {
+        font-size: 12pt;
+        margin-top: 8px;
+        text-align: center;
+      }
+
+      span {
+        font-size: 10pt;
+        text-align: center;
+        font-weight: normal;
+      }
     }
   }
 
@@ -172,7 +197,7 @@ export const Technologies = styled.section`
       align-content: center;
 
       img {
-        height: 5vh;
+        height: 8vh;
         width: 10vw;
         border-radius: 1px;
         margin-left: 8%;

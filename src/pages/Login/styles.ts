@@ -11,6 +11,10 @@ export const Content = styled.div`
   @media (max-width: 900px) {
     grid-template-columns: none;
   }
+
+  @media (max-width: 600px) {
+    grid-template-columns: none;
+  }
 `;
 
 export const ImageContainer = styled.section`
@@ -75,6 +79,7 @@ export const Form = styled.form`
   }
 
   section label {
+    font-size: 12pt;
     color: var(--primary);
   }
 
@@ -143,7 +148,7 @@ export const Form = styled.form`
   }
 
   @media (max-width: 900px) {
-    margin-top: -67px;
+    margin-top: -90px;
     & {
       border-radius: 0;
       flex-direction: column;
@@ -154,7 +159,6 @@ export const Form = styled.form`
     }
 
     .logo-mobile {
-      margin-top: -20%;
       display: flex;
     }
 
@@ -183,7 +187,7 @@ export const Form = styled.form`
     }
   }
 
-  @media (max-height: 700px) {
+  @media (max-height: 600px) {
     & {
       height: 105vh;
     }
