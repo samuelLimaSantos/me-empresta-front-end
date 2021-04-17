@@ -73,7 +73,7 @@ const HeaderInside: React.FC = () => {
       </Content>
       <section className="box-localizacao">
         <img src={MapIcon} alt="Icone-localizacao" />
-        <p>Enviar para Jonisson Gomes da Silva </p>
+        <p>Enviar para {userData.name} </p>
         <strong>, Recife - 53610</strong>
       </section>
       <Menu>
@@ -91,7 +91,6 @@ const HeaderInside: React.FC = () => {
             <p>Categorias</p>
             <p>Ajuda</p>
           </nav>
-
           <Link to="/new-product" className="anunciar">
             <span>Emprestar</span>
             <FiPlusSquare width="3" size="32px" />

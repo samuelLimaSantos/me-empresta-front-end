@@ -10,8 +10,10 @@ export const Container = styled.div`
     display: none;
   }
 
-  @media (max-width: 837px) {
+  @media (max-width: 600px) {
     grid-template-rows: 100px 30px;
+    padding-top: 10px;
+
     .box-localizacao {
       display: flex;
       margin-bottom: 2%;
@@ -23,6 +25,34 @@ export const Container = styled.div`
     .box-localizacao img {
       height: 3vh;
       width: 3vw;
+      margin-right: 1%;
+    }
+
+    .box-localizacao p {
+      font-size: 8pt;
+      color: white;
+    }
+
+    .box-localizacao strong {
+      font-size: 8pt;
+      color: white;
+    }
+  }
+
+  @media (max-width: 900px) {
+    grid-template-rows: 100px 30px;
+
+    .box-localizacao {
+      display: flex;
+      margin-bottom: 2%;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+    }
+
+    .box-localizacao img {
+      height: 2vh;
+      width: 2vw;
       margin-right: 1%;
     }
 
@@ -96,7 +126,7 @@ export const Content = styled.div`
     }
   }
 
-  @media (max-width: 837px) {
+  @media (max-width: 900px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
 
@@ -113,11 +143,12 @@ export const Content = styled.div`
     }
 
     img {
-      height: 6vh;
-      width: 18vw;
+      height: 3%;
+      width: 16vw;
     }
 
     .box-perfil {
+      height: 3%;
       width: 75vw;
     }
 
@@ -129,8 +160,47 @@ export const Content = styled.div`
       margin-left: 5%;
       margin-right: 5%;
       display: block;
-      height: 5vh;
-      width: 12vw;
+      height: 4vh;
+      width: 10vw;
+    }
+  }
+
+  @media (max-width: 600px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .input-search {
+      order: 3;
+      grid-column: auto / span 2;
+      justify-self: center;
+      margin-bottom: 16px;
+      width: 70% !important;
+
+      input {
+        width: 95% !important;
+      }
+    }
+
+    img {
+      height: 3%;
+      width: 16vw;
+    }
+
+    .box-perfil {
+      height: 3%;
+      width: 75vw;
+    }
+
+    .box-perfil span {
+      width: 100%;
+    }
+
+    .box-perfil img {
+      margin-left: 5%;
+      margin-right: 5%;
+      display: block;
+      height: 4vh;
+      width: 10vw;
     }
   }
 `;
@@ -154,7 +224,7 @@ export const LinkContainer = styled(Link)`
 
     &:hover {
       span {
-        color: yellow;
+        color: gray;
         font-size: 9pt;
       }
     }
@@ -344,7 +414,21 @@ export const MenuContent = styled.div`
     }
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 600px) {
+    nav p {
+      font-size: 7.5pt;
+      color: white;
+      margin-left: 5%;
+      margin-right: 4%;
+      transition: 200ms;
+    }
+
+    nav p:hover {
+      cursor: pointer;
+      color: yellow;
+      transition: 200ms;
+    }
+
     & {
       grid-template-columns: 1fr;
     }

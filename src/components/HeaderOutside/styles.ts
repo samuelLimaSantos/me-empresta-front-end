@@ -8,6 +8,10 @@ export const Container = styled.nav`
   justify-content: space-between;
   align-items: center;
 
+  @media (max-width: 900px) {
+    width: 75%;
+  }
+
   @media (max-width: 600px) {
     width: 85%;
   }
@@ -33,7 +37,28 @@ export const ContainerLogo = styled.section`
     margin-right: 2%;
   }
 
+  @media (max-width: 900px) {
+    width: 70%;
+    img {
+      height: 5vh;
+      width: 10vw;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      margin-left: 0;
+      text-decoration: none;
+    }
+
+    & a h1 {
+      margin-left: 0;
+      display: block;
+    }
+  }
+
   @media (max-width: 600px) {
+    width: 50%;
     img {
       height: 5vh;
       width: 15vw;
@@ -85,10 +110,10 @@ export const ContainerMenu = styled.section`
 
   @media (max-width: 600px) {
     display: flex;
-    width: 40%;
+    width: 50%;
 
     article a {
-      margin-right: 0;
+      margin-right: 4px;
       font-size: 8pt;
     }
   }
