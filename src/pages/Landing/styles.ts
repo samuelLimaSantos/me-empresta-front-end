@@ -12,6 +12,7 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   margin: 0 auto;
+  margin-top: -10%;
   display: grid;
   grid-template-columns: 1fr 2fr;
   align-self: center;
@@ -20,6 +21,7 @@ export const Content = styled.div`
 
   @media (max-width: 780px) {
     & {
+      height: 100%;
       grid-template-columns: 1fr;
     }
   }
@@ -32,6 +34,13 @@ export const Description = styled.section`
   h1 {
     width: 50px;
     font-size: 50px;
+    color: var(--light);
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    width: 50px;
+    font-size: 53px;
     color: var(--light);
     margin-bottom: 16px;
   }
@@ -54,7 +63,14 @@ export const Description = styled.section`
   }
 
   @media (max-width: 1000px) {
+    margin-top: 15%;
     h1 {
+      margin-top: -25%;
+      font-size: 40px;
+    }
+
+    h2 {
+      margin-top: -25%;
       font-size: 40px;
     }
 
@@ -68,17 +84,31 @@ export const Description = styled.section`
   }
 
   @media (max-width: 780px) {
+    margin-top: 25%;
+
     h1 {
       width: 100%;
       text-align: center;
+      font-size: 50px;
+    }
+
+    h2 {
+      width: 100%;
+      text-align: center;
+      margin-top: 0.01px;
+      font-size: 50px;
     }
 
     h1 > span {
       margin: 8px auto;
+      font-size: 38px;
     }
 
     p {
-      text-align: center;
+      margin-left: 5%;
+      margin-right: 5%;
+      text-align: justify;
+      width: 91%;
     }
   }
 `;

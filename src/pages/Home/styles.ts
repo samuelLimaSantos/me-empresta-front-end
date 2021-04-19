@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   background-color: var(--background);
-  height: max-content;
+  height: 100%;
   min-height: 1000px;
 `;
 
@@ -11,7 +11,7 @@ export const Content = styled.div`
   height: 100%;
 
   .banner img {
-    width: 100%;
+    width: 100vw;
   }
 `;
 
@@ -38,6 +38,7 @@ export const Products = styled.div`
 `;
 
 export const Product = styled.div`
+  border: 2px solid var(--primary);
   transition: 1s margin;
   img {
     width: 100%;

@@ -11,6 +11,10 @@ export const Content = styled.div`
   @media (max-width: 900px) {
     grid-template-columns: none;
   }
+
+  @media (max-width: 600px) {
+    grid-template-columns: none;
+  }
 `;
 
 export const ImageContainer = styled.section`
@@ -29,11 +33,11 @@ export const ImageContainer = styled.section`
 
 export const Form = styled.form`
   background-color: var(--background);
-  height: 100vh;
+  height: 110vh;
   display: flex;
   align-content: center;
   padding: 110px 16px 32px 16px;
-  margin-top: -90px;
+  margin-top: -80px;
   border-radius: 32px 0 0 32px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.45);
   z-index: 9999999;
@@ -65,6 +69,7 @@ export const Form = styled.form`
     font-size: 30px;
     color: var(--primary);
     text-align: center;
+    margin-bottom: 20px;
   }
 
   section {
@@ -73,10 +78,16 @@ export const Form = styled.form`
     max-width: 500px;
   }
 
+  section label {
+    font-size: 12pt;
+    color: var(--primary);
+  }
+
   section .input {
     margin-top: 8px;
     background-color: #fff;
     height: 48px;
+    width: 95%;
     display: flex;
     align-items: center;
     border: 2px solid var(--primary);
@@ -95,6 +106,7 @@ export const Form = styled.form`
   }
 
   section .input svg {
+    margin-right: 15px;
     color: var(--primary);
   }
 
@@ -136,6 +148,7 @@ export const Form = styled.form`
   }
 
   @media (max-width: 900px) {
+    margin-top: -90px;
     & {
       border-radius: 0;
       flex-direction: column;
@@ -149,14 +162,34 @@ export const Form = styled.form`
       display: flex;
     }
 
+    section {
+      margin-bottom: 32px;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    section label {
+      color: var(--primary);
+    }
+
+    section .input input {
+      width: 70%;
+      border: none;
+      padding: 8px;
+      height: 36px;
+      outline: none;
+      font-weight: 300;
+      border-radius: 8px;
+    }
+
     section .input svg {
-      margin-right: 5px;
+      margin-left: 20%;
     }
   }
 
-  @media (max-height: 700px) {
+  @media (max-height: 600px) {
     & {
-      height: 680px;
+      height: 105vh;
     }
   }
 `;

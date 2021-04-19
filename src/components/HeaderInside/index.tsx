@@ -4,6 +4,8 @@ import { FiSearch, FiPlusSquare } from 'react-icons/fi';
 import Logo from '../../assets/Logo.png';
 import { Container, Content, LinkContainer, Menu, MenuContent } from './styles';
 import UserImage from '../../assets/user.png';
+import MapIcon from '../../assets/map.svg';
+import CartIcon from '../../assets/cart.svg';
 import Loading from '../Loading';
 import api from '../../services/api';
 
@@ -53,7 +55,7 @@ const HeaderInside: React.FC = () => {
         {userData.name ? (
           <LinkContainer to="/profile">
             <section className="box-perfil">
-              <span>Bem-vindo {userData.name}</span>
+              <span>Bem-vindo, {userData.name}</span>
               <img
                 src={`https://upload-meempresta.s3.amazonaws.com/${userData.photo_id}`}
                 alt="Imagem do usuário"
@@ -69,19 +71,34 @@ const HeaderInside: React.FC = () => {
           </LinkContainer>
         )}
       </Content>
+      <section className="local-container">
+        <img src={MapIcon} alt="Icone-localizacao" />
+        <p>Enviar para {userData.name} </p>
+        <strong>, Recife - 53610</strong>
+      </section>
       <Menu>
         <MenuContent>
-          <div />
-          <ul>
-            <li>Black Friday</li>
-            <li>Bombando</li>
-            <li>Categorias</li>
-            <li>Sobre</li>
-          </ul>
-
+          <section className="local-container">
+            <img src={MapIcon} alt="Icone-localizacao" />
+            <section>
+              <p>Enviar para {userData.name}</p>
+              <strong>Recife - 53610</strong>
+            </section>
+          </section>
+          <nav>
+            <p>Novos</p>
+            <p>Bombando</p>
+            <p>Categorias</p>
+            <p>Ajuda</p>
+          </nav>
           <Link to="/new-product" className="anunciar">
             <span>Emprestar</span>
-            <FiPlusSquare width="3" size="28px" />
+            <FiPlusSquare width="3" size="32px" />
+          </Link>
+
+          <Link to="/new-product" className="carrinho">
+            <span>Carrinho</span>
+            <img src={CartIcon} alt="Icone-carrinho" />
           </Link>
         </MenuContent>
       </Menu>

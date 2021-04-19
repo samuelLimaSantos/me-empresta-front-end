@@ -2,18 +2,27 @@ import styled from 'styled-components';
 
 export const Container = styled.nav`
   max-width: 1300px;
-  width: 100%;
+  width: 95%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 900px) {
+    width: 75%;
+  }
+
+  @media (max-width: 600px) {
+    width: 85%;
+  }
 `;
 
 export const ContainerLogo = styled.section`
+  width: 30%;
   a {
     display: flex;
     align-items: center;
-    margin-left: -25px;
+    margin-left: -50px;
     text-decoration: none;
   }
 
@@ -22,7 +31,46 @@ export const ContainerLogo = styled.section`
     margin-left: -30px;
   }
 
-  @media (max-width: 500px) {
+  img {
+    height: 8vh;
+    width: 6vw;
+    margin-right: 2%;
+  }
+
+  @media (max-width: 900px) {
+    width: 70%;
+    img {
+      height: 5vh;
+      width: 10vw;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      margin-left: 0;
+      text-decoration: none;
+    }
+
+    & a h1 {
+      margin-left: 0;
+      display: block;
+    }
+  }
+
+  @media (max-width: 600px) {
+    width: 50%;
+    img {
+      height: 5vh;
+      width: 15vw;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      margin-left: 0;
+      text-decoration: none;
+    }
+
     & a h1 {
       display: none;
     }
@@ -60,13 +108,13 @@ export const ContainerMenu = styled.section`
     opacity: 0.8;
   }
 
-  @media (max-width: 500px) {
-    & {
-      width: 170px;
-    }
+  @media (max-width: 600px) {
+    display: flex;
+    width: 50%;
 
     article a {
-      font-size: 14px;
+      margin-right: 4px;
+      font-size: 8pt;
     }
   }
 `;
