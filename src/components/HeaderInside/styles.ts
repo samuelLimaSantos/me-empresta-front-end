@@ -6,7 +6,7 @@ export const Container = styled.div`
   grid-template-rows: 100px 55px;
   background-color: #8651b5;
 
-  .box-localizacao {
+  .local-container {
     display: none;
   }
 
@@ -14,7 +14,7 @@ export const Container = styled.div`
     grid-template-rows: 100px 30px;
     padding-top: 10px;
 
-    .box-localizacao {
+    .local-container {
       display: flex;
       margin-bottom: 2%;
       justify-content: center;
@@ -22,18 +22,18 @@ export const Container = styled.div`
       width: 100vw;
     }
 
-    .box-localizacao img {
+    .local-container img {
       height: 3vh;
       width: 3vw;
       margin-right: 1%;
     }
 
-    .box-localizacao p {
+    .local-container p {
       font-size: 8pt;
       color: white;
     }
 
-    .box-localizacao strong {
+    .local-container strong {
       font-size: 8pt;
       color: white;
     }
@@ -42,7 +42,7 @@ export const Container = styled.div`
   @media (max-width: 900px) {
     grid-template-rows: 100px 30px;
 
-    .box-localizacao {
+    .local-container {
       display: flex;
       margin-bottom: 2%;
       justify-content: center;
@@ -50,18 +50,18 @@ export const Container = styled.div`
       width: 100vw;
     }
 
-    .box-localizacao img {
+    .local-container img {
       height: 2vh;
       width: 2vw;
       margin-right: 1%;
     }
 
-    .box-localizacao p {
+    .local-container p {
       font-size: 8pt;
       color: white;
     }
 
-    .box-localizacao strong {
+    .local-container strong {
       font-size: 8pt;
       color: white;
     }
@@ -224,8 +224,8 @@ export const LinkContainer = styled(Link)`
 
     &:hover {
       span {
-        color: gray;
-        font-size: 9pt;
+        color: white;
+        font-size: 9.5pt;
       }
     }
 
@@ -251,7 +251,7 @@ export const MenuContent = styled.div`
   height: 50px;
   align-items: center;
 
-  .box-localizacao {
+  .local-container {
     display: block;
     display: flex;
     align-items: center;
@@ -259,12 +259,12 @@ export const MenuContent = styled.div`
     margin-right: 3%;
   }
 
-  .box-localizacao img {
+  .local-container img {
     height: 2vh;
     width: 2vw;
   }
 
-  .box-localizacao section {
+  .local-container section {
     color: white;
     font-size: 10pt;
     font-weight: 400;
@@ -344,7 +344,7 @@ export const MenuContent = styled.div`
     height: 50px;
     align-items: center;
 
-    .box-localizacao {
+    .local-container {
       display: none;
     }
 

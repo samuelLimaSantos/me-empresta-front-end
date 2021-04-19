@@ -71,17 +71,17 @@ const HeaderInside: React.FC = () => {
           </LinkContainer>
         )}
       </Content>
-      <section className="box-localizacao">
+      <section className="local-container">
         <img src={MapIcon} alt="Icone-localizacao" />
         <p>Enviar para {userData.name} </p>
         <strong>, Recife - 53610</strong>
       </section>
       <Menu>
         <MenuContent>
-          <section className="box-localizacao">
+          <section className="local-container">
             <img src={MapIcon} alt="Icone-localizacao" />
             <section>
-              <p>Enviar para Jonisson Gomes da Silva</p>
+              <p>Enviar para {userData.name}</p>
               <strong>Recife - 53610</strong>
             </section>
           </section>
