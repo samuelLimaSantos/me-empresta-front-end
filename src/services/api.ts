@@ -1,7 +1,11 @@
 import axios from 'axios';
 
-// export const environment = 'http://localhost:3333';
-export const environment = 'https://me-empresta-backend.herokuapp.com';
+export const environment = 'http://localhost:3333';
+// export const environment = 'https://me-empresta-backend.herokuapp.com';
+// export const environment = 'http://localhost:5000/api/v1';
+
+export const imageEnvironment = 'http://localhost:3333/uploads';
+// export const imageEnvironment = 'https://upload-meempresta.s3.amazonaws.com';
 
 const api = axios.create({
   baseURL: environment,

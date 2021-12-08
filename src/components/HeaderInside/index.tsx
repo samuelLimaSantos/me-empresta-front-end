@@ -5,7 +5,7 @@ import Logo from '../../assets/Logo.png';
 import { Container, Content, LinkContainer, Menu, MenuContent } from './styles';
 import UserImage from '../../assets/user.png';
 import Loading from '../Loading';
-import api from '../../services/api';
+import api, { imageEnvironment } from '../../services/api';
 
 interface UserProps {
   name: string;
@@ -55,7 +55,7 @@ const HeaderInside: React.FC = () => {
             <section className="box-perfil">
               <span>Bem-vindo {userData.name}</span>
               <img
-                src={`https://upload-meempresta.s3.amazonaws.com/${userData.photo_id}`}
+                src={`${imageEnvironment}/${userData.photo_id}`}
                 alt="Imagem do usuário"
               />
             </section>

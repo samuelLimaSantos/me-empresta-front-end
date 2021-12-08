@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { BsStarHalf, BsStarFill } from 'react-icons/bs';
 import { useParams, useHistory } from 'react-router-dom';
-import api from '../../services/api';
+import api, { imageEnvironment } from '../../services/api';
 import HeaderInside from '../../components/HeaderInside';
 import Loading from '../../components/Loading';
 import { Container, Content } from './styles';
@@ -53,7 +53,7 @@ const Product: React.FC = () => {
       <HeaderInside />
       <Content>
         <img
-          src={`https://upload-meempresta.s3.amazonaws.com/${product.photo_id}`}
+          src={`${imageEnvironment}/${product.photo_id}`}
           alt="Foto do produto"
         />
 

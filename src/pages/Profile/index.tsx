@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import { BsStarHalf, BsStarFill } from 'react-icons/bs';
-import api from '../../services/api';
+import api, { imageEnvironment } from '../../services/api';
 import HeaderInside from '../../components/HeaderInside';
 import { Container, Content } from './styles';
 import { Context } from '../../context';
@@ -54,7 +54,7 @@ const Profile: React.FC = () => {
       <Content>
         <header>
           <img
-            src={`https://upload-meempresta.s3.amazonaws.com/${userData.photo_id}`}
+            src={`${imageEnvironment}/${userData.photo_id}`}
             alt="Foto de perfil"
           />
           <h2>{userData.name}</h2>

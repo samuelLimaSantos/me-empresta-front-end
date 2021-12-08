@@ -64,6 +64,9 @@ const Register: React.FC = () => {
             history.push('/register');
           }, 3000);
         }
+
+        alert('error');
+        console.log(err.message);
       }
     },
     [name, cpf, whatsapp, email, password, selectedFile, history],

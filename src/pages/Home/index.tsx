@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Loading from '../../components/Loading';
-import api from '../../services/api';
+import api, { imageEnvironment } from '../../services/api';
 import HeaderInside from '../../components/HeaderInside';
 import BannerImage from '../../assets/Banner.svg';
 import { Container, Content, Products, Product } from './styles';
@@ -41,7 +41,7 @@ const Home: React.FC = () => {
           {products?.map(product => (
             <Product key={product.id}>
               <img
-                src={`https://upload-meempresta.s3.amazonaws.com/${product.photo_id}`}
+                src={`${imageEnvironment}/${product.photo_id}`}
                 alt="Foto do produto"
               />
 
